@@ -5,11 +5,6 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
   @Get('getname')
   getName(): string {
     return "Hello my name in Armin"
@@ -18,5 +13,11 @@ export class AppController {
   @Post('sayhello')
   sayHello(): string {
     return "hello"
+  }
+
+  @Post('setname')
+  setName(): string {
+    this.appService.setName("Reza")
+    return this.appService.getName()
   }
 }
