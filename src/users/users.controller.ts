@@ -9,4 +9,9 @@ export class UsersController {
     userDetail(): string {
         return this.userService.sayHello()
     }
+
+    @Get('list')
+    usersList(): object {
+        return this.userService.usersList()
+    }
 }
