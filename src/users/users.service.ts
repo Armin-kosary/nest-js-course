@@ -25,8 +25,11 @@ export class UsersService {
         return this.users
     }
     
-    getUserDetailById(id: number): any {
+    getUserDetailById(id: number): {id: number, name: string} | null {
         let user = this.users.find(user => user.id === id)
+        if (!user) {
+            return null
+        }
         return user
     }
 }
