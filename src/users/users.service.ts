@@ -39,4 +39,13 @@ export class UsersService {
         }
         return this.users
     }
+
+    editUserById(id: number, data: any) {
+        let user = this.users.find(user => user.id === id)
+        if (!user) {
+            return null
+        }
+        user.name = data.name
+        return user
+    }
 }
