@@ -19,4 +19,9 @@ export class UsersController {
     getUserDetailById(@Param('id') id: string): {id: number, name: string} | null {
         return this.userService.getUserDetailById(parseInt(id))
     }
+
+    @Post('create')
+    createNewUser(@Body() data: object) {
+        return this.userService.createNewUser(data)
+    }
 }

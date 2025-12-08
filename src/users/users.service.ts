@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-    private users = [
+    private users: any[] = [
         {
             id: 1,
             name: "Armin"
@@ -31,5 +31,12 @@ export class UsersService {
             return null
         }
         return user
+    }
+
+    createNewUser(data: object) {
+        if (data) {
+            this.users.push(data)            
+        }
+        return this.users
     }
 }
