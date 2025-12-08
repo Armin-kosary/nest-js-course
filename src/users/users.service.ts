@@ -48,4 +48,10 @@ export class UsersService {
         user.name = data.name
         return user
     }
+
+
+    deleteUserById(id: number) {
+        let user = this.users.find(user => user.id === id)
+        return user.name+" Deleted"
+    }
 }
